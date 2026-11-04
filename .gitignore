@@ -1,0 +1,27 @@
+# --- Python virtual environment (never commit it: it is large and machine-specific)
+.venv/
+venv/
+env/
+
+# --- Python cache files
+__pycache__/
+*.py[cod]
+
+# --- Jupyter auto-save checkpoints
+.ipynb_checkpoints/
+
+# --- Downloaded dataset (re-downloaded automatically by src/utils.py)
+data/
+
+# --- Saved model weights (hundreds of MB; GitHub rejects files > 100 MB)
+models/
+
+# --- Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Secrets (API keys, tokens)
+.env

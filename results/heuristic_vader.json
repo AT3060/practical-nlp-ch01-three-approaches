@@ -1,0 +1,22 @@
+{
+  "approach": "heuristic_vader",
+  "accuracy": 0.7106,
+  "precision_macro": 0.7192,
+  "recall_macro": 0.7106,
+  "f1_macro": 0.7077,
+  "confusion_matrix": [
+    [
+      1529,
+      971
+    ],
+    [
+      476,
+      2024
+    ]
+  ],
+  "family": "heuristic",
+  "n_train_examples": 0,
+  "train_seconds": 0.0,
+  "predict_seconds": 5.294,
+  "threshold": 0.5
+}

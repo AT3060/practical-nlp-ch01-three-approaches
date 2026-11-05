@@ -27,17 +27,28 @@ All hyper-parameters and thresholds are chosen on the validation set; the test s
 
 ## Results
 
-<!-- Paste the table from results/results_table.md here after running notebook 05 -->
+All approaches are evaluated on the same 5,000 IMDB test reviews (CPU run).
 
-*Run the notebooks to fill in this table (see "How to run").*
+| Family | Approach | Labelled IMDB examples | Accuracy | Macro F1 | Training time |
+|---|---|---|---|---|---|
+| Heuristics | Own lexicon + rules | 0 | 0.733 | 0.721 | – |
+| Heuristics | VADER (rule-based) | 0 | 0.711 | 0.708 | – |
+| Machine learning | TF-IDF + Naive Bayes | 22,500 | 0.862 | 0.862 | 0.09 s |
+| Machine learning | TF-IDF + Logistic Regression | 4,000 | 0.876 | – | ~1 s |
+| Machine learning | **TF-IDF + Logistic Regression** | 22,500 | **0.904** | **0.904** | 1.7 s |
+| Deep learning | Ready-made SST-2 DistilBERT (no IMDB training) | 0 | 0.880 | 0.880 | – |
+| Deep learning | DistilBERT fine-tuned on IMDB | 4,000 | 0.897 | 0.897 | 44.5 min |
+
+![Learning curve](figures/learning_curve.png)
 
 ### Key findings
-<!-- Write 3–4 bullet points in your own words after looking at your results, e.g.:
-- How much better is ML than rules, and DL than ML?
-- From how many labelled examples does ML beat the rule-based approaches? (learning curve)
-- How much slower is DistilBERT at prediction time?
-- What kinds of reviews does every approach get wrong?
--->
+- **Rules are a solid start without data, but limited.** The hand-written lexicon (0.733) even beats VADER (0.711) on movie reviews, but both stay far below the learned models.
+- **A few hundred labels beat hand-written rules.** Logistic Regression overtakes both rule-based approaches with only 250 labelled reviews, and keeps improving roughly linearly in log(data): 0.717 (100) → 0.876 (4,000) → 0.904 (22,500).
+- **With the same data, deep learning wins, at a high cost.** On the same 4,000 reviews, fine-tuned DistilBERT beats Logistic Regression by 2.2 points (0.897 vs. 0.876), but trains about 1,600× longer and predicts about 130× slower on a CPU.
+- **More data for the cheap model almost closes the gap.** Logistic Regression on all 22,500 reviews (0.904) is still slightly ahead of DistilBERT on 4,000. DistilBERT reads only the first 256 tokens of each review, while TF-IDF sees the whole text.
+- **Transfer learning works across related domains.** A model fine-tuned only on critics' single sentences (SST-2) reaches 0.880 on long IMDB user reviews without a single IMDB label: 15 points above the rules, and only 1.7 points below the fine-tuned model.
+
+**Takeaway, as in Chapter 1:** start with simple baselines, and add complexity only when the gain justifies the cost. Here, TF-IDF + Logistic Regression is the best trade-off between accuracy and cost.
 
 ## Notebooks
 
@@ -66,7 +77,7 @@ practical-nlp-ch01-three-approaches/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-username>/practical-nlp-ch01-three-approaches.git
+git clone https://github.com/AT3060/practical-nlp-ch01-three-approaches.git
 cd practical-nlp-ch01-three-approaches
 
 # 2. Create and activate a virtual environment

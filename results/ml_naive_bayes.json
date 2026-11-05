@@ -1,0 +1,22 @@
+{
+  "approach": "ml_naive_bayes",
+  "accuracy": 0.8618,
+  "precision_macro": 0.8635,
+  "recall_macro": 0.8618,
+  "f1_macro": 0.8616,
+  "confusion_matrix": [
+    [
+      2239,
+      261
+    ],
+    [
+      430,
+      2070
+    ]
+  ],
+  "family": "machine_learning",
+  "n_train_examples": 22500,
+  "train_seconds": 0.094,
+  "predict_seconds": 2.296,
+  "alpha": 0.5
+}

@@ -1,0 +1,22 @@
+{
+  "approach": "dl_sst2_pretrained",
+  "accuracy": 0.8802,
+  "precision_macro": 0.8816,
+  "recall_macro": 0.8802,
+  "f1_macro": 0.8801,
+  "confusion_matrix": [
+    [
+      2276,
+      224
+    ],
+    [
+      375,
+      2125
+    ]
+  ],
+  "family": "deep_learning",
+  "n_train_examples": 0,
+  "train_seconds": 0.0,
+  "predict_seconds": 323.006,
+  "model": "distilbert-base-uncased-finetuned-sst-2-english"
+}

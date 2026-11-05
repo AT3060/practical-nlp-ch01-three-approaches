@@ -1,0 +1,25 @@
+{
+  "approach": "dl_distilbert_finetuned",
+  "accuracy": 0.8972,
+  "precision_macro": 0.8973,
+  "recall_macro": 0.8972,
+  "f1_macro": 0.8972,
+  "confusion_matrix": [
+    [
+      2265,
+      235
+    ],
+    [
+      279,
+      2221
+    ]
+  ],
+  "family": "deep_learning",
+  "n_train_examples": 4000,
+  "train_seconds": 2670.628,
+  "predict_seconds": 335.86,
+  "device": "cpu",
+  "model": "distilbert/distilbert-base-uncased",
+  "epochs": 2,
+  "learning_rate": 3e-05
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "n_train": 100,
+    "test_accuracy": 0.7172
+  },
+  {
+    "n_train": 250,
+    "test_accuracy": 0.772
+  },
+  {
+    "n_train": 500,
+    "test_accuracy": 0.8098
+  },
+  {
+    "n_train": 1000,
+    "test_accuracy": 0.8368
+  },
+  {
+    "n_train": 2000,
+    "test_accuracy": 0.8644
+  },
+  {
+    "n_train": 4000,
+    "test_accuracy": 0.8756
+  },
+  {
+    "n_train": 8000,
+    "test_accuracy": 0.8914
+  },
+  {
+    "n_train": 16000,
+    "test_accuracy": 0.899
+  },
+  {
+    "n_train": 22500,
+    "test_accuracy": 0.9038
+  }
+]

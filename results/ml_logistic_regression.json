@@ -1,0 +1,22 @@
+{
+  "approach": "ml_logistic_regression",
+  "accuracy": 0.9038,
+  "precision_macro": 0.9038,
+  "recall_macro": 0.9038,
+  "f1_macro": 0.9038,
+  "confusion_matrix": [
+    [
+      2252,
+      248
+    ],
+    [
+      233,
+      2267
+    ]
+  ],
+  "family": "machine_learning",
+  "n_train_examples": 22500,
+  "train_seconds": 1.673,
+  "predict_seconds": 2.513,
+  "C": 8
+}
